@@ -1,0 +1,14 @@
+<h1>Articles</h1>
+
+<button class="btn btn-secondary"><%= link_to "Create an article", new_article_path %></button>
+
+<div class="grid">
+  <% @articles.each do |article| %>
+    <%= link_to article_path(article), :id => "title" do %>
+      <div id="article-card">
+        <h4><%= article.title %></h4>
+        <p><%= article.content %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
